@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PIZZERIA ACCAPULCO</title>
+    <link rel="stylesheet" href="style.css">
+
+</head>
+
+<body>
+    <h1 class="header-text"> La PIZZERIA&nbsp;&nbsp;ACCAPULCO  welcomes you!</h1>
+    <h3 class="header-text">Please choose your best, una pizza deliziosa:</h3>
+
+    <form id="form" onsubmit="Controller.runAddPizza()" action="javascript:void(0);"> 
+        <label for="pname" action=""   >* Pizza name:</label>
+        <input type="text" id="pname" name="pname" value="Accapulco" pattern="[a-zA-Z0-9]+" required maxlength="30">
+        <p id="pname-err"></p>
+
+        <label for="price">* Price in Eur:</label>
+        <input type="number" id="price" name="price" required min="0.01" step="0.01" value="9.99" > <!-- decimal places 2-->
+        <p id="price-err"></p>
+
+        <label for="heat">Heat level (1-3):</label>
+        <input type="number" id="heat" name="heat" min="1" max="3" maxlength="1">
+        <p id="heat-err"></p>
+
+        <label for="toppings" >* Toppings:</label>
+        <input type="text" id="toppings" name="toppings" value="cheese, ham, onions" required minlength="2">
+        <p id="toppings-err"></p>
+
+        <label for="image"> Image:</label>
+        <input id="photo" list="image" name="image">
+            <datalist id="image">
+                <option value="American">
+                <option value="Domino">
+                <option value="Florentine">
+                <option value="Mexico">
+                <option value="Onions">
+            </datalist> 
+        <p id="image-err"></p>
+
+        <!-- <input type="submit"  value="Add pizza" > -->
+          <!--onclick="runAddPizza()"-->
+        <button class='button' type='submit'>Add pizza</button>
+    </form>
+
+    <div id="menu">
+        <table id="table">
+
+        </table>
+    </div>
+
+
+</body>
+<script src="script.js"></script> 
+</html>
